@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jadhav Royal Palace Hotel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(to right,#dfe9f3,#ffffff);
+}
+
+/* NAVBAR */
+nav{
+background:#111;
+padding:15px;
+text-align:center;
+position:sticky;
+top:0;
+}
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-size:18px;
+}
+nav a:hover{
+color:gold;
+}
+
+/* HERO */
+.hero{
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:url('https://images.unsplash.com/photo-1566073771259-6a8506099945') center/cover;
+color:white;
+text-align:center;
+}
+.hero h1{
+font-size:50px;
+}
+.hero button{
+padding:12px 25px;
+margin-top:20px;
+background:gold;
+border:none;
+cursor:pointer;
+}
+
+/* SECTION */
+.section{
+padding:60px 10%;
+text-align:center;
+}
+.section:nth-child(even){
+background:#f1f8e9;
+}
+.section:nth-child(odd){
+background:#e3f2fd;
+}
+
+/* ROOMS */
+.rooms{
+display:flex;
+flex-wrap:wrap;
+justify-content:space-around;
+}
+.room{
+width:30%;
+margin:15px;
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 0 10px gray;
+transition:0.3s;
+}
+.room:hover{
+transform:scale(1.05);
+}
+.room img{
+width:100%;
+height:200px;
+}
+
+/* FACILITY */
+.facilities{
+display:flex;
+flex-wrap:wrap;
+justify-content:space-around;
+}
+.facility{
+background:white;
+padding:20px;
+margin:10px;
+width:22%;
+border-radius:10px;
+}
+
+/* FORM */
+form{
+background:white;
+padding:20px;
+border-radius:10px;
+}
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+}
+button{
+background:black;
+color:white;
+padding:10px;
+border:none;
+cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.room, .facility{
+width:100%;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#rooms">Rooms</a>
+<a href="#booking">Booking</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+<div>
+<h1>Jadhav Royal Palace Hotel</h1>
+<p>Luxury | Comfort | Best Service</p>
+<button onclick="scrollToBooking()">Book Now</button>
+</div>
+</div>
+
+<!-- ABOUT -->
+<div class="section" id="about">
+<h2>About Us</h2>
+<p>We provide luxury stay, delicious food and best hospitality in Pune.</p>
+</div>
+
+<!-- ROOMS -->
+<div class="section" id="rooms">
+<h2>Our Rooms</h2>
+<div class="rooms">
+
+<div class="room">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
+<h3>Single Room - ₹1000</h3>
+</div>
+
+<div class="room">
+<img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa">
+<h3>Double Room - ₹2000</h3>
+</div>
+
+<div class="room">
+<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+<h3>Deluxe Room - ₹3000</h3>
+</div>
+
+</div>
+</div>
+
+<!-- FACILITIES -->
+<div class="section">
+<h2>Facilities</h2>
+<div class="facilities">
+<div class="facility">🏊 Swimming Pool</div>
+<div class="facility">🍽 Restaurant</div>
+<div class="facility">📶 Free WiFi</div>
+<div class="facility">🚗 Parking</div>
+</div>
+</div>
+
+<!-- BOOKING -->
+<div class="section" id="booking">
+<h2>Book Your Stay</h2>
+<form onsubmit="bookNow(event)">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="email" id="email" placeholder="Email" required>
+<input type="date" required>
+<input type="date" required>
+<button type="submit">Book Now</button>
+</form>
+
+<p><b>Booking handled by:</b> Jadhav</p>
+<p><b>Email:</b> abhipatil2306@gmail.com</p>
+</div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+<h2>Contact</h2>
+<p>📍 Pune, Maharashtra</p>
+<p>📞 9876543210</p>
+<p>📧 abhipatil2306@gmail.com</p>
+<p>👤 Managed by: Jadhav</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+© 2026 Jadhav Royal Palace Hotel | Managed by Jadhav
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+function scrollToBooking(){
+document.getElementById("booking").scrollIntoView();
+}
+
+function bookNow(e){
+e.preventDefault();
+
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+
+alert("Booking Successful!\nName: "+name+"\nEmail: "+email+"\nManaged by: Jadhav");
+}
+</script>
+
+</body>
+</html>
